@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="LocalProject" representedClassName="LocalProject" syncable="YES">
+        <attribute name="branch" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="buildCommand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commitsAhead" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="commitsBehind" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hasModifiedFiles" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hasStagedFiles" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hasUntrackedFiles" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastBuildCommandOutput" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="projectName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="revision" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="LocalProject" positionX="-63" positionY="-18" width="128" height="210"/>
+    </elements>
+</model>
