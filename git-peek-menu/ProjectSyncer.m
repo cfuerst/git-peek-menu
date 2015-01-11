@@ -35,14 +35,14 @@
 + (NSNumber*)getCommitsAhead:(NSString*)path
 {
     return [NSNumber numberWithInteger:
-        [[self runCommand:[NSString stringWithFormat:@"echo $(git -C %@ log --oneline @{u}.. 2> /dev/null | wc -l | tr -d ' ')", path]] integerValue]
+        [[self runCommand:[NSString stringWithFormat:@"echo $(git -C %@ rev-list --count @{u}.. 2> /dev/null)", path]] integerValue]
     ];
 }
 
 + (NSNumber*)getCommitsBehind:(NSString*)path
 {
     return [NSNumber numberWithInteger:
-        [[self runCommand:[NSString stringWithFormat:@"echo $(git -C %@ log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')", path]] integerValue]
+        [[self runCommand:[NSString stringWithFormat:@"echo $(git -C %@ rev-list --count ..@{u} 2> /dev/null)", path]] integerValue]
     ];
 }
 
@@ -56,14 +56,14 @@
 + (NSNumber*)hasModifiedFiles:(NSString*)path
 {
     return [NSNumber numberWithBool:
-        ([[self runCommand:[NSString stringWithFormat:@"echo $(git -C %@ diff 2> /dev/null | wc -l | tr -d ' ')", path]] intValue] == 0) ? false : true
+        ([[self runCommand:[NSString stringWithFormat:@"echo $(git -C %@ diff --name-only 2> /dev/null | wc -l | tr -d ' ')", path]] intValue] == 0) ? false : true
     ];
 }
 
 + (NSNumber*)hasStagedFiles:(NSString*)path
 {
     return [NSNumber numberWithBool:
-        ([[self runCommand:[NSString stringWithFormat:@"echo $(git -C %@ diff --cached 2> /dev/null | wc -l | tr -d ' ')", path]] intValue] == 0) ? false : true
+        ([[self runCommand:[NSString stringWithFormat:@"echo $(git -C %@ diff --cached --name-only 2> /dev/null | wc -l | tr -d ' ')", path]] intValue] == 0) ? false : true
     ];
 }
 
